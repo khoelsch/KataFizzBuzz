@@ -27,4 +27,27 @@ public class FizzBuzzTest {
 
     Assert.assertArrayEquals(expected, FizzBuzz.calcList(10));
   }
+
+  @Test
+  public void calcListForNumbersSmallerThan16() {
+    String[] expected = {
+            "1",
+            "2",
+            "Fizz",
+            "4",
+            "Buzz",
+            "Fizz",
+            "7",
+            "8",
+            "Fizz",
+            "Buzz",
+            "11",
+            "Fizz",    // 12
+            "13",
+            "14",
+            "FizzBuzz" // 15
+    };
+
+    Assert.assertArrayEquals(expected, FizzBuzz.calcList(15));
+  }
 }
