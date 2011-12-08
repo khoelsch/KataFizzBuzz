@@ -9,4 +9,30 @@ package com.coremedia.codekatas;
  * For more Details see  <a href="http://codingdojo.org/cgi-bin/wiki.pl?back=KataFizzBuzz">the description @ CodingDojo</a>.
  */
 public class FizzBuzz {
+
+  public static String[] calcList(int lastConvertedNumber) {
+    String[] list = new String[lastConvertedNumber];
+
+    for (int i=1; i<=lastConvertedNumber; ++i ) {
+      list[i-1] = convertNumber(i);
+    }
+
+    return list;
+  }
+
+  private static String convertNumber(int number) {
+    boolean multipleOfThree = (number % 3) == 0;
+    boolean multipleOfFive = (number % 5) == 0;
+
+    if (multipleOfThree && multipleOfFive) {
+      return "FizzBuzz";
+    } else if (multipleOfThree) {
+      return "Fizz";
+    } else if (multipleOfFive) {
+      return "Buzz";
+    }
+
+    return Integer.valueOf(number).toString();
+
+  }
 }
