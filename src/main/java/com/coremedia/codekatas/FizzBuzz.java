@@ -11,7 +11,7 @@ package com.coremedia.codekatas;
 public class FizzBuzz {
 
   public static String[] calcList(int lastConvertedNumber) {
-    String[] list = new String[lastConvertedNumber];
+    final String[] list = new String[lastConvertedNumber];
 
     for (int i=1; i<=lastConvertedNumber; ++i ) {
       list[i-1] = convertNumber(i);
@@ -34,5 +34,12 @@ public class FizzBuzz {
 
     return Integer.valueOf(number).toString();
 
+  }
+
+  public static void printNumbers(int lastConvertedNumber) {
+    final String[] list = calcList(lastConvertedNumber);
+    for (final String number : list) {
+      System.out.println(number);
+    }
   }
 }
