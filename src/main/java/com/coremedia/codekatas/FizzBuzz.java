@@ -21,6 +21,38 @@ public class FizzBuzz {
   }
 
   private static String convertNumber(int number) {
+    String result = convertMultiple(number);
+    if (!"".equals(result)) {
+      return result;
+    }
+
+    result = convertContains(number);
+    if (!"".equals(result)) {
+      return result;
+    }
+
+    return Integer.valueOf(number).toString();
+
+  }
+
+  // returns "", when converting not possible
+  private static String convertContains(int number) {
+    int remainingDigits = number;
+    do {
+      int lastDigit = remainingDigits % 10;
+      remainingDigits /= 10;
+      if (lastDigit == 3) {
+        return "Fizz";
+      } else if (lastDigit == 5) {
+        return "Buzz";
+      }
+    } while ( remainingDigits > 0 );
+
+    return "";
+  }
+
+  // returns "", when converting not possible
+  private static String convertMultiple(int number) {
     boolean multipleOfThree = (number % 3) == 0;
     boolean multipleOfFive = (number % 5) == 0;
 
@@ -32,8 +64,7 @@ public class FizzBuzz {
       return "Buzz";
     }
 
-    return Integer.valueOf(number).toString();
-
+    return "";
   }
 
   public static void printNumbers(int lastConvertedNumber) {

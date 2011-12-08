@@ -43,7 +43,7 @@ public class FizzBuzzTest {
             "Buzz",
             "11",
             "Fizz",    // 12
-            "13",
+            "Fizz",    // 13: Has a '3' in it.
             "14",
             "FizzBuzz" // 15
     };
